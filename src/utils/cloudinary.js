@@ -10,7 +10,7 @@ cloudinary.config({
 
 const uploadOnCloudinary =async(localFilePath)=>{
   try{
-    if(!localFilePath) return null 
+    if(!localFilePath) return null  
     const response = await cloudinary.uploader.upload(localFilePath,{
       resource_type:"auto"
     })
@@ -23,14 +23,14 @@ const uploadOnCloudinary =async(localFilePath)=>{
   }
 }
 
-const uploadResult = await cloudinary.uploader
-       .upload(
-           'https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg', {
-               public_id: 'shoes',
-           }
-       )
-       .catch((error) =>  {
-           console.log(error);
-       });
+// const uploadResult = await cloudinary.uploader
+//        .upload(
+//            'https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg', {
+//                public_id: 'shoes',
+//            }
+//        )
+//        .catch((error) =>  {
+//            console.log(error);
+//        });
 
-  
+  export {uploadOnCloudinary}
